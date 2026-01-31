@@ -41,8 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? [
             {
               url: post.featuredImage.node.sourceUrl,
-              width: post.featuredImage.node.mediaDetails.width,
-              height: post.featuredImage.node.mediaDetails.height,
+              width: post.featuredImage.node.mediaDetails?.width || 1200,
+              height: post.featuredImage.node.mediaDetails?.height || 630,
             },
           ]
         : undefined,
