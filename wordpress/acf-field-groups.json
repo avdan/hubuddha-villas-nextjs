@@ -1,0 +1,879 @@
+[
+  {
+    "key": "group_service_details",
+    "title": "Service Details",
+    "fields": [
+      {
+        "key": "field_service_icon",
+        "label": "Icon",
+        "name": "icon",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "Select the icon for this service",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "bed": "Bed / Mattress",
+          "breakfast": "Breakfast",
+          "desk": "Working Area / Desk",
+          "wifi": "Wi-Fi",
+          "pool": "Pool",
+          "curtains": "Blackout Curtains",
+          "housekeeping": "Housekeeping",
+          "group": "Group / Retreat"
+        },
+        "default_value": "bed",
+        "return_format": "value",
+        "multiple": 0,
+        "allow_null": 0,
+        "ui": 1,
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_service_description",
+        "label": "Description",
+        "name": "description",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "Brief description of the service",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 3,
+        "placeholder": "",
+        "new_lines": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "service"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1,
+    "show_in_graphql": 1,
+    "graphql_field_name": "serviceDetails"
+  },
+  {
+    "key": "group_testimonial_details",
+    "title": "Testimonial Details",
+    "fields": [
+      {
+        "key": "field_testimonial_guest_location",
+        "label": "Guest Location",
+        "name": "guestLocation",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Where the guest is from (e.g., \"Australia\", \"United Kingdom\")",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "e.g., Australia"
+      },
+      {
+        "key": "field_testimonial_rating",
+        "label": "Rating",
+        "name": "rating",
+        "aria-label": "",
+        "type": "number",
+        "instructions": "Star rating (1-5)",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 5,
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "placeholder": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "testimonial"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "The testimonial text goes in the main content editor. Use the Title field for the guest's name.",
+    "show_in_rest": 1,
+    "show_in_graphql": 1,
+    "graphql_field_name": "testimonialDetails"
+  },
+  {
+    "key": "group_team_member_details",
+    "title": "Team Member Details",
+    "fields": [
+      {
+        "key": "field_team_member_role",
+        "label": "Role",
+        "name": "role",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Job title or role (e.g., \"Villa Manager\")",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "e.g., Villa Manager"
+      },
+      {
+        "key": "field_team_member_bio",
+        "label": "Bio",
+        "name": "bio",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "Short biography (optional)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 4,
+        "placeholder": "",
+        "new_lines": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "team_member"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Use the Title field for the team member's name. Set their photo using the Featured Image.",
+    "show_in_rest": 1,
+    "show_in_graphql": 1,
+    "graphql_field_name": "teamMemberDetails"
+  },
+  {
+    "key": "group_faq_details",
+    "title": "FAQ Details",
+    "fields": [
+      {
+        "key": "field_faq_answer",
+        "label": "Answer",
+        "name": "answer",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "The answer to this question",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 5,
+        "placeholder": "",
+        "new_lines": "br"
+      },
+      {
+        "key": "field_faq_page",
+        "label": "Page",
+        "name": "page",
+        "aria-label": "",
+        "type": "select",
+        "instructions": "Which page should this FAQ appear on?",
+        "required": 1,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "retreats": "Retreats",
+          "about": "About",
+          "general": "General"
+        },
+        "default_value": "general",
+        "return_format": "value",
+        "multiple": 0,
+        "allow_null": 0,
+        "ui": 1,
+        "ajax": 0,
+        "placeholder": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "faq"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Use the Title field for the question.",
+    "show_in_rest": 1,
+    "show_in_graphql": 1,
+    "graphql_field_name": "faqDetails"
+  },
+  {
+    "key": "group_site_settings",
+    "title": "Site Settings",
+    "fields": [
+      {
+        "key": "field_tab_hero",
+        "label": "Hero Section",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_hero_title",
+        "label": "Hero Title",
+        "name": "heroTitle",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Main title displayed on the homepage hero",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Hubuddha Villas",
+        "maxlength": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_hero_subtitle",
+        "label": "Hero Subtitle",
+        "name": "heroSubtitle",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Subtitle displayed below the main title",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Best villas in Ubud, Bali",
+        "maxlength": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_hero_image",
+        "label": "Hero Image",
+        "name": "heroImage",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Background image for the hero section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_tab_about",
+        "label": "About Section",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_about_welcome",
+        "label": "Welcome Text",
+        "name": "aboutWelcome",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Short welcome heading",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_about_intro",
+        "label": "Intro Paragraph",
+        "name": "aboutIntro",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "Introduction paragraph for the about section",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 4,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_about_story",
+        "label": "Our Story",
+        "name": "aboutStory",
+        "aria-label": "",
+        "type": "wysiwyg",
+        "instructions": "The full story content",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "tabs": "all",
+        "toolbar": "full",
+        "media_upload": 1,
+        "delay": 0
+      },
+      {
+        "key": "field_tab_contact",
+        "label": "Contact Section",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_contact_phone",
+        "label": "Phone",
+        "name": "contactPhone",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "Display phone number (e.g., +62 812 1599 0063)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "+62 812 1599 0063",
+        "maxlength": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_whatsapp_number",
+        "label": "WhatsApp Number",
+        "name": "whatsappNumber",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "WhatsApp number without + or spaces (e.g., 6281215990063)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "6281215990063",
+        "maxlength": "",
+        "placeholder": "6281215990063"
+      },
+      {
+        "key": "field_contact_email",
+        "label": "Email",
+        "name": "contactEmail",
+        "aria-label": "",
+        "type": "email",
+        "instructions": "Contact email address",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "info@hubuddha.com",
+        "placeholder": ""
+      },
+      {
+        "key": "field_contact_address",
+        "label": "Address",
+        "name": "contactAddress",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "Physical address (use line breaks)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Jl. Raya Pejeng Kawan,\nTampaksiring, Gianyar,\nBali 80552",
+        "maxlength": "",
+        "rows": 3,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tab_retreats",
+        "label": "Retreats Section",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_retreats_intro",
+        "label": "Retreats Intro Text",
+        "name": "retreatsIntro",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "Introduction text for the retreats page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "rows": 4,
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_tab_page_images",
+        "label": "Page Images",
+        "name": "",
+        "aria-label": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_home_about_image1",
+        "label": "Home - About Section Image 1",
+        "name": "homeAboutImage1",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "First image for the About section on homepage (main interior shot)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_home_about_image2",
+        "label": "Home - About Section Image 2",
+        "name": "homeAboutImage2",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Second image for the About section on homepage (gallery shot)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_home_contact_image",
+        "label": "Home - Contact Section Image",
+        "name": "homeContactImage",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Background image for the Contact section on homepage",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_about_hero_image",
+        "label": "About Page - Hero Image",
+        "name": "aboutHeroImage",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Hero background image for the About page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_about_main_image",
+        "label": "About Page - Main Image",
+        "name": "aboutMainImage",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Main interior image for the About page content",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_about_2br_image",
+        "label": "About Page - 2BR Villa Image",
+        "name": "about2BrImage",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Image representing the 2 Bedroom Villa on About page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_about_3br_image",
+        "label": "About Page - 3BR Villa Image",
+        "name": "about3BrImage",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Image representing the 3 Bedroom Villa on About page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_location_hero_image",
+        "label": "Location Page - Hero Image",
+        "name": "locationHeroImage",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Hero background image for the Location page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_location_image1",
+        "label": "Location Page - Image 1",
+        "name": "locationImage1",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "First supporting image for Location page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_location_image2",
+        "label": "Location Page - Image 2",
+        "name": "locationImage2",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Second supporting image for Location page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_contact_hero_image",
+        "label": "Contact Page - Hero Image",
+        "name": "contactHeroImage",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "Hero background image for the Contact page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "jpg,jpeg,png,webp",
+        "preview_size": "medium"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "site-settings"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1,
+    "show_in_graphql": 1,
+    "graphql_field_name": "siteSettings"
+  }
+]
