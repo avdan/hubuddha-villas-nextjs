@@ -10,53 +10,70 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const slugs = await getAllPostSlugs();
-  return slugs.map((slug) => ({ slug }));
+  try {
+    const slugs = await getAllPostSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch (error) {
+    console.error("Error generating static params for posts:", error);
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  try {
+    const { slug } = await params;
+    const post = await getPostBySlug(slug);
 
-  if (!post) {
+    if (!post) {
+      return {
+        title: "Article Not Found",
+      };
+    }
+
+    const excerpt = post.excerpt
+      ? post.excerpt.replace(/<[^>]*>/g, "").substring(0, 160)
+      : "";
+
     return {
-      title: "Article Not Found",
+      title: `${post.title || "Article"} | Hubuddha Villas`,
+      description: excerpt,
+      openGraph: {
+        title: post.title || "Article",
+        description: excerpt,
+        type: "article",
+        publishedTime: post.date || undefined,
+        authors: post.author?.node?.name ? [post.author.node.name] : undefined,
+        images: post.featuredImage?.node?.sourceUrl
+          ? [
+              {
+                url: post.featuredImage.node.sourceUrl,
+                width: post.featuredImage.node.mediaDetails?.width || 1200,
+                height: post.featuredImage.node.mediaDetails?.height || 630,
+              },
+            ]
+          : undefined,
+      },
+    };
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+    return {
+      title: "Article | Hubuddha Villas",
     };
   }
-
-  const excerpt = post.excerpt
-    ? post.excerpt.replace(/<[^>]*>/g, "").substring(0, 160)
-    : "";
-
-  return {
-    title: `${post.title} | Hubuddha Villas`,
-    description: excerpt,
-    openGraph: {
-      title: post.title,
-      description: excerpt,
-      type: "article",
-      publishedTime: post.date,
-      authors: post.author?.node?.name ? [post.author.node.name] : undefined,
-      images: post.featuredImage
-        ? [
-            {
-              url: post.featuredImage.node.sourceUrl,
-              width: post.featuredImage.node.mediaDetails?.width || 1200,
-              height: post.featuredImage.node.mediaDetails?.height || 630,
-            },
-          ]
-        : undefined,
-    },
-  };
 }
 
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+function formatDate(dateString: string | null | undefined): string {
+  if (!dateString) return "";
+  try {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  } catch {
+    return "";
+  }
 }
 
 function getReadTime(content: string | null): string {
