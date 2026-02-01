@@ -27,18 +27,18 @@ interface ExchangeRateResult {
 }
 
 /**
- * Fetch current IDR to USD exchange rate with 24-hour caching
+ * Fetch current IDR to USD exchange rate
  * Returns how many IDR equals 1 USD
  */
 export async function getExchangeRate(): Promise<ExchangeRateResult> {
   try {
-    // Fetch from frankfurter.app with Next.js caching
-    // This will automatically cache the response for 24 hours
+    // Fetch from frankfurter.app (Edge-compatible)
     const response = await fetch(
       'https://api.frankfurter.app/latest?from=USD&to=IDR',
       {
-        next: { revalidate: CACHE_DURATION },
-      }
+        // Use cf for Cloudflare caching on Edge
+        cf: { cacheTtl: CACHE_DURATION, cacheEverything: true },
+      } as RequestInit
     );
 
     if (!response.ok) {

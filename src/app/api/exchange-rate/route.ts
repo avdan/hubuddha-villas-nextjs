@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getExchangeRate } from '@/lib/exchange-rate';
 
+export const runtime = 'edge';
+
 /**
  * GET /api/exchange-rate
  * Returns the current IDR to USD exchange rate

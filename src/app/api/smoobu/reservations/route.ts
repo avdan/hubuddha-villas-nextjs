@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'edge';
+
 const SMOOBU_API_KEY = process.env.SMOOBU_API_KEY;
 const SMOOBU_API_URL = 'https://login.smoobu.com/api';
 const SMOOBU_CHANNEL_ID = 1544457; // Direct booking channel ID
