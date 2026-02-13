@@ -416,18 +416,10 @@ export default function VillaDetailClient({ villa, otherVillas }: VillaDetailCli
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="bg-card border border-border p-6"
               >
-                <div className="flex justify-between items-center mb-6">
+                <div className="mb-6">
                   <h3 className="text-xl font-light text-jungle heading-display">
                     Book Your Stay
                   </h3>
-                  {villaDetails.pricePerNight && (
-                    <div className="text-right">
-                      <span className="text-2xl font-light text-jungle">
-                        ${villaDetails.pricePerNight}
-                      </span>
-                      <span className="text-sm text-muted-foreground">/night</span>
-                    </div>
-                  )}
                 </div>
 
                 <div className="space-y-4">
@@ -567,17 +559,9 @@ export default function VillaDetailClient({ villa, otherVillas }: VillaDetailCli
                           <span className="font-medium">Available!</span>
                         </div>
                         <div className="mb-4">
-                          <div className="flex justify-between items-center">
-                            <span className="text-muted-foreground">
-                              {booking.nights} nights
-                            </span>
-                            <span className="text-2xl font-light text-jungle">
-                              {formatPrice(booking.availability.price || 0)}
-                            </span>
-                          </div>
-                          <div className="text-right text-sm text-muted-foreground">
-                            ~{formatUsd(convertIdrToUsd(booking.availability.price || 0, exchangeRate))}
-                          </div>
+                          <span className="text-muted-foreground">
+                            {booking.nights} nights
+                          </span>
                         </div>
                         <Button
                           onClick={() => booking.step === "available" && booking.resetBooking()}
@@ -770,14 +754,7 @@ export default function VillaDetailClient({ villa, otherVillas }: VillaDetailCli
                           Processing...
                         </span>
                       ) : (
-                        <>
-                          Confirm Booking
-                          {booking.availability?.price && (
-                            <span className="ml-2">
-                              - {formatPrice(booking.availability.price)} (~{formatUsd(convertIdrToUsd(booking.availability.price, exchangeRate))})
-                            </span>
-                          )}
-                        </>
+                        "Confirm Booking"
                       )}
                     </Button>
                   </div>

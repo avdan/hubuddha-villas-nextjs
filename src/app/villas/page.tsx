@@ -52,15 +52,6 @@ export default async function VillasPage() {
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30 group-hover:scale-105 transition-transform duration-700" />
                   )}
-                  {villa.villaDetails.pricePerNight && (
-                    <div className="absolute bottom-4 right-4 bg-jungle/90 text-seashell px-4 py-2">
-                      <span className="text-sm">From</span>
-                      <span className="text-2xl font-light ml-2">
-                        ${villa.villaDetails.pricePerNight}
-                      </span>
-                      <span className="text-sm">/night</span>
-                    </div>
-                  )}
                 </div>
 
                 {/* Content */}

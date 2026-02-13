@@ -399,22 +399,6 @@ export default function BookPage() {
                               {result.villa.description}
                             </p>
 
-                            {result.price && (
-                              <div className="mb-4">
-                                <div className="flex items-baseline justify-between">
-                                  <span className="text-2xl font-light text-jungle heading-display">
-                                    {formatPrice(result.price)}
-                                  </span>
-                                  <span className="text-sm text-muted-foreground">
-                                    total for {nights} nights
-                                  </span>
-                                </div>
-                                <div className="text-sm text-muted-foreground">
-                                  ~{formatUsd(convertIdrToUsd(result.price, exchangeRate))}
-                                </div>
-                              </div>
-                            )}
-
                             <Link
                               href={`/villas/${result.villa.slug}`}
                               className="flex items-center justify-center gap-2 w-full bg-jungle text-seashell py-3 font-medium hover:bg-moss-green transition-colors tracking-wide uppercase text-sm"
