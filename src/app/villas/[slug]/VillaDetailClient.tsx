@@ -250,9 +250,10 @@ export default function VillaDetailClient({ villa, otherVillas }: VillaDetailCli
                 Description of the Villa
               </h2>
               {villaDetails.shortDescription && (
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  {villaDetails.shortDescription}
-                </p>
+                <div
+                  className="text-muted-foreground leading-relaxed mb-4 prose prose-sm max-w-none"
+                  dangerouslySetInnerHTML={{ __html: villaDetails.shortDescription }}
+                />
               )}
               {villa.content && (
                 <div
