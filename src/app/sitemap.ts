@@ -1,19 +1,25 @@
 import { MetadataRoute } from "next";
+import { getAllVillaSlugs, getAllPostSlugs } from "@/lib/queries";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hubuddha.com";
 
-// Placeholder data - in production, fetch from WordPress via getAllVillaSlugs() and getAllPostSlugs()
-const villaSlugs = ["2-bedroom-villa", "3-bedroom-villa"];
-const articleSlugs = [
-  "best-rice-terraces-near-ubud",
-  "digital-nomad-guide-to-ubud",
-  "best-restaurants-in-ubud",
-  "ubud-temple-etiquette",
-  "sunrise-at-mount-batur",
-  "balinese-cooking-class-experience",
-];
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Fetch dynamic slugs from WordPress
+  let villaSlugs: string[] = [];
+  let articleSlugs: string[] = [];
+
+  try {
+    villaSlugs = await getAllVillaSlugs();
+  } catch (e) {
+    console.error("Failed to fetch villa slugs for sitemap:", e);
+  }
+
+  try {
+    articleSlugs = await getAllPostSlugs();
+  } catch (e) {
+    console.error("Failed to fetch post slugs for sitemap:", e);
+  }
+
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -58,10 +64,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 
   // Villa pages
-  // In production: const villaSlugs = await getAllVillaSlugs();
   const villaPages: MetadataRoute.Sitemap = villaSlugs.map((slug) => ({
     url: `${baseUrl}/villas/${slug}`,
     lastModified: new Date(),
@@ -70,7 +81,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Article pages (at root level)
-  // In production: const articleSlugs = await getAllPostSlugs();
   const articlePages: MetadataRoute.Sitemap = articleSlugs.map((slug) => ({
     url: `${baseUrl}/${slug}`,
     lastModified: new Date(),
