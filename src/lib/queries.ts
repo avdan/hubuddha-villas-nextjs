@@ -35,7 +35,7 @@ const VILLA_FIELDS = `
   villaDetails {
     tagline
     shortDescription
-    smoobuApartmentId
+    smoobuApartmentId: smoobuapartmentid
     bedrooms
     bathrooms
     maxGuests

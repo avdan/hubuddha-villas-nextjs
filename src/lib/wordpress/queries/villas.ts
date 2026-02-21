@@ -16,7 +16,7 @@ const VILLA_CARD_FIELDS = `
     }
   }
   villaDetails {
-    smoobuApartmentId
+    smoobuApartmentId: smoobuapartmentid
     tagline
     features
   }
@@ -41,7 +41,7 @@ const VILLA_FULL_FIELDS = `
   villaDetails {
     tagline
     additionalDescription
-    smoobuApartmentId
+    smoobuApartmentId: smoobuapartmentid
     specs {
       size
       beds
