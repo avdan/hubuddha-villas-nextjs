@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar, Footer } from "@/components/layout";
 import {
   MotionDiv,
@@ -97,8 +98,13 @@ export default function RetreatsPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px]">
         <div className="absolute inset-0">
-          {/* Image placeholder */}
-          <div className="w-full h-full bg-gradient-to-br from-jungle to-moss-green" />
+          <Image
+            src="/images/villa-outdoor.jpg"
+            alt="Hubuddha Villas retreat space"
+            fill
+            className="object-cover"
+            priority
+          />
           <div className="absolute inset-0 bg-jungle/60" />
         </div>
         <div className="relative h-full flex items-center justify-center text-center px-4">
@@ -342,12 +348,21 @@ export default function RetreatsPage() {
               transition={defaultTransition}
               className="grid grid-cols-2 gap-4"
             >
-              {/* Image placeholders */}
-              <div className="aspect-[4/5] bg-sage-green/30">
-                <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <div className="aspect-[4/5] relative overflow-hidden">
+                <Image
+                  src="/images/villa-bedroom.jpg"
+                  alt="Villa bedroom with rice field views"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="aspect-[4/5] bg-sage-green/30 mt-8">
-                <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <div className="aspect-[4/5] relative overflow-hidden mt-8">
+                <Image
+                  src="/images/villa-bathroom.jpg"
+                  alt="Villa bathroom with bathtub view"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </MotionDiv>
           </div>
@@ -365,9 +380,13 @@ export default function RetreatsPage() {
               transition={defaultTransition}
               className="order-2 lg:order-1"
             >
-              {/* Image placeholder */}
-              <div className="aspect-[4/3] bg-sage-green/30 shadow-xl">
-                <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <div className="aspect-[4/3] relative overflow-hidden shadow-xl">
+                <Image
+                  src="/images/villa-living-wide.jpg"
+                  alt="Spacious villa living room"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </MotionDiv>
             <MotionDiv
@@ -1004,45 +1023,45 @@ export default function RetreatsPage() {
               whileInView={scaleIn.whileInView}
               viewport={viewportOnce}
               transition={fastTransition}
-              className="col-span-2 row-span-2 bg-sage-green/30"
+              className="col-span-2 row-span-2 relative overflow-hidden"
             >
-              <div className="w-full h-full min-h-[400px] bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <Image src="/images/hero-villa.jpg" alt="Villa exterior with pool" fill className="object-cover min-h-[400px]" />
             </MotionDiv>
             <MotionDiv
               initial={scaleIn.initial}
               whileInView={scaleIn.whileInView}
               viewport={viewportOnce}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-sage-green/30 aspect-square"
+              className="aspect-square relative overflow-hidden"
             >
-              <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <Image src="/images/villa-gallery-1.jpg" alt="Bedroom with view" fill className="object-cover" />
             </MotionDiv>
             <MotionDiv
               initial={scaleIn.initial}
               whileInView={scaleIn.whileInView}
               viewport={viewportOnce}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-sage-green/30 aspect-square"
+              className="aspect-square relative overflow-hidden"
             >
-              <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <Image src="/images/villa-gallery-2.jpg" alt="Modern kitchen" fill className="object-cover" />
             </MotionDiv>
             <MotionDiv
               initial={scaleIn.initial}
               whileInView={scaleIn.whileInView}
               viewport={viewportOnce}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-sage-green/30 aspect-square"
+              className="aspect-square relative overflow-hidden"
             >
-              <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <Image src="/images/villa-gallery-5.jpg" alt="Chandelier dining area" fill className="object-cover" />
             </MotionDiv>
             <MotionDiv
               initial={scaleIn.initial}
               whileInView={scaleIn.whileInView}
               viewport={viewportOnce}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-sage-green/30 aspect-square"
+              className="aspect-square relative overflow-hidden"
             >
-              <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <Image src="/images/villa-gallery-4.jpg" alt="Terrace with pool" fill className="object-cover" />
             </MotionDiv>
           </div>
         </div>

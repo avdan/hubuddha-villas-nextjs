@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar, Footer } from "@/components/layout";
 import {
   MotionDiv,
@@ -20,24 +21,9 @@ export const metadata: Metadata = {
 
 // Placeholder data - will be replaced with WordPress data
 const teamMembers = [
-  {
-    name: "Made Surya",
-    role: "Villa Manager",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-  },
-  {
-    name: "Ketut Ayu",
-    role: "Housekeeping Lead",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-  },
-  {
-    name: "Wayan Putra",
-    role: "Garden & Pool",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-  },
+  { name: "Made Surya", role: "Villa Manager" },
+  { name: "Ketut Ayu", role: "Housekeeping Lead" },
+  { name: "Wayan Putra", role: "Garden & Pool" },
 ];
 
 const whatSetsUsApart = [
@@ -75,8 +61,13 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px]">
         <div className="absolute inset-0">
-          {/* Image placeholder - will be replaced with actual image */}
-          <div className="w-full h-full bg-gradient-to-br from-jungle to-moss-green" />
+          <Image
+            src="/images/villa-gallery-3.jpg"
+            alt="Hubuddha Villas gazebo and pool"
+            fill
+            className="object-cover"
+            priority
+          />
           <div className="absolute inset-0 bg-jungle/60" />
         </div>
         <div className="relative h-full flex items-center justify-center text-center">
@@ -157,9 +148,13 @@ export default function AboutPage() {
               viewport={viewportOnce}
               transition={{ ...defaultTransition, delay: 0.2 }}
             >
-              {/* Image placeholder */}
-              <div className="aspect-[4/5] bg-sage-green/30 shadow-xl">
-                <div className="w-full h-full bg-gradient-to-br from-moss-green/30 to-jungle/30" />
+              <div className="aspect-[4/5] bg-sage-green/30 shadow-xl relative overflow-hidden">
+                <Image
+                  src="/images/villa-gallery-1.jpg"
+                  alt="Villa bedroom with rice field views"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-sage-green -z-10" />
             </MotionDiv>
@@ -199,14 +194,17 @@ export default function AboutPage() {
               {
                 title: "2-Bedroom Villa",
                 desc: "Perfect for couples or small families",
+                image: "/images/villa-interior.jpg",
               },
               {
                 title: "2-Bedroom Villa",
                 desc: "Ideal for a peaceful getaway",
+                image: "/images/villa-2br.jpg",
               },
               {
                 title: "3-Bedroom Villa",
                 desc: "Spacious retreat for groups",
+                image: "/images/villa-3br.jpg",
               },
             ].map((villa, index) => (
               <MotionDiv
@@ -216,11 +214,13 @@ export default function AboutPage() {
                 viewport={viewportOnce}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="overflow-hidden mb-4">
-                  {/* Image placeholder */}
-                  <div className="w-full aspect-[4/3] bg-sage-green/30 group-hover:scale-105 transition-transform duration-500">
-                    <div className="w-full h-full bg-gradient-to-br from-moss-green/20 to-jungle/20" />
-                  </div>
+                <div className="overflow-hidden mb-4 relative aspect-[4/3]">
+                  <Image
+                    src={villa.image}
+                    alt={villa.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <h3 className="text-xl font-medium text-foreground mb-2 heading-display">
                   {villa.title}
@@ -541,13 +541,10 @@ export default function AboutPage() {
                 viewport={viewportOnce}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-32 h-32 rounded-full bg-sage-green/30 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl font-light text-moss-green heading-display">
+                    {member.name.split(" ").map((n) => n[0]).join("")}
+                  </span>
                 </div>
                 <h3 className="text-xl font-medium text-foreground mb-1 heading-display">
                   {member.name}

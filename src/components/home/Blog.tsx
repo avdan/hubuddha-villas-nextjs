@@ -12,32 +12,28 @@ const blogPosts = [
     title: "Top 10 Things to Do in Ubud",
     category: "Popular Places",
     date: "January 12, 2025",
-    image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&h=300&fit=crop",
+    image: "/images/villa-3br.jpg",
   },
   {
     id: 2,
     title: "Best Restaurants Near Our Villas",
     category: "Local Guide",
     date: "January 26, 2025",
-    image:
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=300&fit=crop",
+    image: "/images/villa-gallery-3.jpg",
   },
   {
     id: 3,
     title: "Planning Your Perfect Bali Retreat",
     category: "Digital Nomad",
     date: "January 26, 2025",
-    image:
-      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=400&h=300&fit=crop",
+    image: "/images/villa-office.jpg",
   },
   {
     id: 4,
-    title: "We Offering Online Registration",
+    title: "A Guide to Living in Ubud",
     category: "Tips & Tricks",
     date: "January 12, 2025",
-    image:
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=400&h=300&fit=crop",
+    image: "/images/villa-outdoor.jpg",
   },
 ];
 
