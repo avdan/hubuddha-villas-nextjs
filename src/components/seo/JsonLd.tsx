@@ -42,13 +42,11 @@ export function VillaJsonLd({
   name,
   description,
   slug,
-  pricePerNight,
   amenities,
 }: {
   name: string;
   description: string;
   slug: string;
-  pricePerNight: number;
   amenities: string[];
 }) {
   const schema = {
@@ -71,7 +69,6 @@ export function VillaJsonLd({
       latitude: "-8.4347",
       longitude: "115.2785",
     },
-    priceRange: `$${pricePerNight}+`,
     amenityFeature: amenities.map((amenity) => ({
       "@type": "LocationFeatureSpecification",
       name: amenity,

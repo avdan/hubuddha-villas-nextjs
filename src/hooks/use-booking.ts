@@ -52,7 +52,7 @@ const initialState: UseBookingState = {
   otherVillas: [],
 };
 
-export function useBooking(villaSlug: string): UseBookingReturn {
+export function useBooking(villaSlug: string, smoobuApartmentId?: number | null): UseBookingReturn {
   const [state, setState] = useState<UseBookingState>(initialState);
   const [bookingData, setBookingData] = useState<{
     checkIn: Date | null;
@@ -66,7 +66,8 @@ export function useBooking(villaSlug: string): UseBookingReturn {
     children: 0,
   });
 
-  const apartmentId = getApartmentId(villaSlug);
+  // Use apartment ID from WordPress, fall back to hardcoded map
+  const apartmentId = smoobuApartmentId || getApartmentId(villaSlug);
 
   const nights = bookingData.checkIn && bookingData.checkOut
     ? calculateNights(bookingData.checkIn, bookingData.checkOut)

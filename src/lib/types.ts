@@ -1,7 +1,7 @@
 export interface VillaDetails {
   tagline: string | null;
   shortDescription: string | null;
-  pricePerNight: number | null;
+  smoobuApartmentId: number | null;
   bedrooms: number | null;
   bathrooms: number | null;
   maxGuests: number | null;

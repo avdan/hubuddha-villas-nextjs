@@ -112,8 +112,8 @@ export default function VillaDetailClient({ villa, otherVillas }: VillaDetailCli
   const gallery = villaDetails.gallery?.nodes || [];
   const amenities = villaDetails.amenities || [];
 
-  // Booking hook
-  const booking = useBooking(villa.slug);
+  // Booking hook - use Smoobu apartment ID from WordPress
+  const booking = useBooking(villa.slug, villaDetails.smoobuApartmentId);
 
   const handleCheckAvailability = () => {
     if (checkIn && checkOut) {

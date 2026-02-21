@@ -49,7 +49,7 @@ export interface Villa {
   villaDetails: {
     tagline: string;
     additionalDescription: string;
-    pricePerNight: number;
+    smoobuApartmentId: number;
     specs: VillaSpecs;
     facilities: VillaFacility[];
     gallery: WPImage[];
@@ -67,7 +67,7 @@ export interface VillaCard {
     node: WPImage;
   };
   villaDetails: {
-    pricePerNight: number;
+    smoobuApartmentId: number;
     tagline: string;
     features?: string[];
   };

@@ -35,7 +35,7 @@ const VILLA_FIELDS = `
   villaDetails {
     tagline
     shortDescription
-    pricePerNight
+    smoobuApartmentId
     bedrooms
     bathrooms
     maxGuests

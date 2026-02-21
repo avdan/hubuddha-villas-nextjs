@@ -16,7 +16,7 @@ const VILLA_CARD_FIELDS = `
     }
   }
   villaDetails {
-    pricePerNight
+    smoobuApartmentId
     tagline
     features
   }
@@ -41,7 +41,7 @@ const VILLA_FULL_FIELDS = `
   villaDetails {
     tagline
     additionalDescription
-    pricePerNight
+    smoobuApartmentId
     specs {
       size
       beds
