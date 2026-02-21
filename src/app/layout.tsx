@@ -3,6 +3,7 @@ import { Cormorant_Garamond } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { OrganizationJsonLd, LocalBusinessJsonLd } from "@/components/seo";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -72,6 +73,7 @@ export default function RootLayout({
       <body className={`${cormorant.variable} font-serif antialiased`}>
         <TooltipProvider>
           {children}
+          <WhatsAppButton />
           <Toaster />
         </TooltipProvider>
       </body>

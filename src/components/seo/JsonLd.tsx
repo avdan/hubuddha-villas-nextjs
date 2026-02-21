@@ -15,7 +15,7 @@ export function OrganizationJsonLd() {
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+62-812-3456-7890",
+      telephone: "+62-812-1599-0063",
       contactType: "customer service",
       availableLanguage: ["English", "Indonesian"],
     },
@@ -217,8 +217,8 @@ export function LocalBusinessJsonLd() {
       latitude: "-8.4347",
       longitude: "115.2785",
     },
-    telephone: "+62-812-3456-7890",
-    email: "hello@hubuddha.com",
+    telephone: "+62-812-1599-0063",
+    email: "info@hubuddha.com",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [

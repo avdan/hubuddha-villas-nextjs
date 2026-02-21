@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 // Placeholder data - will be replaced with WordPress data
 const contactInfo = {
-  phone: "+62 812 3456 7890",
-  whatsapp: "+62 812 3456 7890",
-  email: "hello@hubuddha.com",
+  phone: "+62 812 1599 0063",
+  whatsapp: "+62 812 1599 0063",
+  email: "info@hubuddha.com",
   address: "Jl. Raya Tegallalang\nUbud, Gianyar 80561\nBali, Indonesia",
 };
 

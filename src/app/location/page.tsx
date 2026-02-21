@@ -533,7 +533,7 @@ export default function LocationPage() {
                 Request availability
               </Link>
               <a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6281215990063"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 border border-moss-green text-moss-green hover:bg-moss-green/10 px-8 py-4 text-lg transition-colors"

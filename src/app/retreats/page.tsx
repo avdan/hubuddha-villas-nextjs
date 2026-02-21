@@ -1238,7 +1238,7 @@ export default function RetreatsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/6281234567890?text=Hi, I'm interested in hosting a retreat at Hubuddha."
+                href="https://wa.me/6281215990063?text=Hi, I'm interested in hosting a retreat at Hubuddha."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-sage-green text-jungle px-8 py-4 text-sm uppercase tracking-wider hover:bg-seashell transition-colors"
